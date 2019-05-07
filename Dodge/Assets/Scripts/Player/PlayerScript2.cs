@@ -34,4 +34,12 @@ public class PlayerScript2 : MonoBehaviour
         rigidbody.velocity = new Vector3(moveX, 0, moveZ);
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 9)
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

@@ -26,13 +26,25 @@ public class Fire : MonoBehaviour
         {
             //if (Input.GetMouseButtonDown(0))
             {
-                transform.LookAt(new Vector3(Gm.transform.position.x, Gm.transform.position.y + 5.8f, Gm.transform.position.z));
-                //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
-                Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
-
-                transform.LookAt(new Vector3(Gm2.transform.position.x, Gm2.transform.position.y + 5.8f, Gm2.transform.position.z));
-                //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
-                Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
+                if (Gm != null)
+                {
+                    var newRotation = Quaternion.LookRotation(Gm.transform.position - transform.position).eulerAngles;
+                    newRotation.x = 0;
+                    newRotation.z = 0;
+                    transform.rotation = Quaternion.Euler(newRotation);
+                    //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
+                    Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
+                }
+                if (Gm2 != null)
+                {
+                    var newRotation = Quaternion.LookRotation(Gm2.transform.position - transform.position).eulerAngles;
+                    newRotation.x = 0;
+                    newRotation.z = 0;
+                    transform.rotation = Quaternion.Euler(newRotation);
+                    //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
+                    Instantiate(Bullet, FirePos.transform.position, FirePos.transform.rotation);
+                }
+                
             }
             timer = 0;
         }

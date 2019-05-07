@@ -15,8 +15,11 @@ public class PlayerScript1 : MonoBehaviour
     private float speedH = 800f;
     private float speedZ = 800f;
 
+    public int HP;
+
     void Awake()
     {
+        HP = 3;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
     }
@@ -33,5 +36,17 @@ public class PlayerScript1 : MonoBehaviour
 
         rigidbody.velocity = new Vector3(moveX, 0, moveZ);
 
+        if (HP == 0) Destroy(gameObject);
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 9)
+        {
+            //HP--;
+            Destroy(other.gameObject);
+            
+        }
     }
 }
