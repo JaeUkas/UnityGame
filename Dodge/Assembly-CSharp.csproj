@@ -181,6 +181,7 @@
     <Compile Include="Assets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QuerySDEmotionalController.cs" />
     <Compile Include="Assets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QuerySDMecanimController.cs" />
     <Compile Include="Assets\PQAssets\Query-Chan-SD\Scripts\QuerySDController\QuerySDSoundController.cs" />
+    <Compile Include="Assets\Scripts\PhotonInit.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Fire.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />

@@ -394,23 +394,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 38280000
+      m_SelectedIDs: 603c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 8efbffff
+      m_ExpandedIDs: 9477ffffc077fffff679fffffee5ffff2ae6ffff60e8ffff56ecffff86ecffffceeeffff8efbffff98680000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: PhotonMgr
+        m_OriginalName: PhotonMgr
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 22880
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 6}
       m_SearchString: 
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 147
+    m_CachedPref: -147
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
@@ -492,9 +492,9 @@ MonoBehaviour:
     m_ReferencingInstanceIDs: 
     m_SceneHandles: 
     m_ShowAllHits: 0
-    m_SearchArea: 4
+    m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/Resources
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -531,24 +531,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 164}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000082d0000982d0000342e0000702e0000762e00008a2e0000ba2e0000c42e0000162f0000642f00007e2f000070300000e03000005431000056310000883100008c310000aa310000b431000070320000d233000000340000063400001e3600004c370000663700008037000042380000543800007438000096380000de380000f6390000103a0000403a0000a43a0000323b00004c3b0000ea3b00007a3c0000203d0000323d0000443d0000883d00009e3d0000f03d00007e3e0000823e0000063f00004a3f0000623f0000f03f0000764000007840000062410000de41000000420000d64200004a4300000e48000010480000124800001448000016480000184800001a4800001c4800001e48000020480000224800002448000026480000284800002a4800002c4800002e480000304800003248000034480000
+    m_ExpandedIDs: ffffffff00000000082d0000982d0000342e0000702e0000762e00008a2e0000ba2e0000c42e0000162f0000642f00007e2f00007030000094300000e03000005431000056310000883100008c310000aa310000b431000070320000d233000000340000063400001e3600004c370000663700008037000042380000543800007438000096380000de380000f6390000103a0000403a0000a43a0000ca3a0000323b00004c3b0000ea3b00007a3c0000203d0000323d0000443d0000883d00009e3d0000f03d00007e3e0000823e0000063f00004a3f0000623f0000f03f0000764000007840000062410000de41000000420000d64200004a4300000e48000010480000124800001448000016480000184800001a4800001c4800001e48000020480000224800002448000026480000284800002a4800002c4800002e480000304800003248000034480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PhotonInit
+      m_OriginalName: PhotonInit
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 21610
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 7}
     m_SearchString: 
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -635,10 +635,10 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
+    m_HSlider: 1
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
