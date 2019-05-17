@@ -623,6 +623,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
     Collab: 0
     UNet: 1
   luminIcon:
@@ -644,10 +645,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: e84aca2a-ba48-40bc-a5b9-35a097c295a2
+  cloudProjectId: ae354eec-058b-4a9a-8f75-70f44eaaa3fb
   framebufferDepthMemorylessMode: 0
-  projectName: UkasGame
-  organizationId: anytime96
+  projectName: UkasGame (1)
+  organizationId: kitcs2015
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
