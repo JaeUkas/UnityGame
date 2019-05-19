@@ -1,24 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Fire : MonoBehaviour
+public class Fire : MonoBehaviourPunCallbacks
 {
+    public int HP;
     public GameObject Gm;
     public GameObject Gm1;
     public GameObject Bullet;
 
+    GameManager GM;
+    
     float timer;
     float waitingTime;
 
-    private void Awake()
-    {
+    void Awake()
+    {   GM = GameObject.Find("PhotonMgr").GetComponent<GameManager>();
+       
         timer = 0f;
-        waitingTime = 0.2f;
+        waitingTime = 0.4f;
     }
 
     void Update()
     {
+        if(Gm == null) Gm = GM.pClone;
+        if(Gm1 == null) Gm1 = GM.pClone1;
         timer += Time.deltaTime;
 
         if (timer > waitingTime)
@@ -49,5 +57,5 @@ public class Fire : MonoBehaviour
        
     }
 
-    
+ 
 }

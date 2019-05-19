@@ -32,5 +32,6 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - OnCollisionEnter
   DisableAutoOpenWizard: 1
   ShowSettings: 1

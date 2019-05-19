@@ -8,7 +8,11 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
+    public GameObject enemyPrefab;
     public static GameManager Instance;
+
+    public GameObject pClone;
+    public GameObject pClone1;
 
     private void Start()
     {
@@ -21,9 +25,19 @@ public class GameManager : MonoBehaviourPunCallbacks
         else
         {
             Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
-
-            // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-            PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, -30f), Quaternion.identity, 0);
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, -10f), Quaternion.identity, 0);
+            }
+            if (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 1)
+            {
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                pClone = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, -30f), Quaternion.identity, 0);
+            }
+            else if (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 0)
+            {
+                pClone1 = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.Euler(0,180,0), 0);
+            }
         }
     }
 

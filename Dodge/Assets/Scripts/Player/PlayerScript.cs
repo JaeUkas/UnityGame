@@ -17,8 +17,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private float moveX;
     private float moveZ;
-    private float speedH = 800f;
-    private float speedZ = 800f;
+    private float speedH = 3000f;
+    private float speedZ = 3000f;   
 
     private Vector3 currPos;
     private Quaternion currRot;
@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if(pv.IsMine)
         {
