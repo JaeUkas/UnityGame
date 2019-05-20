@@ -1338,7 +1338,7 @@ ScriptsOnlyBuild:
     className: DetectPanel
   - hash:
       serializedVersion: 2
-      Hash: 96337b20bc7f0f6ed89914a1bdfc91cc
+      Hash: 3e277b8a6b5e676d26f5c0b1f2160805
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1482,7 +1482,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: f372603266589ca5a9cbaccdecfa05aa
+      Hash: e5c50a186bb964e5fceca976c0d15da4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Fire

@@ -728,6 +728,8 @@ MonoBehaviour:
   HP: 0
   Gm: {fileID: 0}
   Gm1: {fileID: 0}
+  Em: {fileID: 0}
+  Em1: {fileID: 0}
   Bullet: {fileID: 3476312622085677364, guid: 49dc82e6eff6f064bac0936aeef13909, type: 3}
 --- !u!114 &6700773329515640898
 MonoBehaviour:

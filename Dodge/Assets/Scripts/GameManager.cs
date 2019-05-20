@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject pClone;
     public GameObject pClone1;
 
+    public GameObject eClone;
+    public GameObject eClone1;
+
     private void Start()
     {
         Instance = this;
@@ -30,12 +33,12 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 pClone = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, -270f), Quaternion.identity, 0);
-                PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, -100f), Quaternion.Euler(0, 180, 0), 0);
+                eClone = PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, -100f), Quaternion.Euler(0, 180, 0), 0);
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 0)
             {
                 pClone1 = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.Euler(0,180,0), 0);
-                PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, 70f), Quaternion.identity, 0);
+                eClone1 = PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, 70f), Quaternion.identity, 0);
             }
         }
     }
