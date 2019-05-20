@@ -17,8 +17,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private float moveX;
     private float moveZ;
-    private float speedH = 3000f;
-    private float speedZ = 3000f;   
+    private float speedH = 4000f;
+    private float speedZ = 4000f;   
 
     private Vector3 currPos;
     private Quaternion currRot;

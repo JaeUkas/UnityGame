@@ -18,7 +18,7 @@ public class Fire : MonoBehaviourPunCallbacks
 
     void Awake()
     {   GM = GameObject.Find("PhotonMgr").GetComponent<GameManager>();
-       
+     
         timer = 0f;
         waitingTime = 0.4f;
     }
@@ -33,7 +33,7 @@ public class Fire : MonoBehaviourPunCallbacks
         {
             //if (Input.GetMouseButtonDown(0))
             {
-                if (Gm != null)
+                if (Gm != null && (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 1))
                 {
                     var newRotation = Quaternion.LookRotation(Gm.transform.position - transform.position).eulerAngles;
                     newRotation.x = 0;
@@ -42,7 +42,7 @@ public class Fire : MonoBehaviourPunCallbacks
                     //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
                     Instantiate(Bullet, transform.position, transform.rotation);
                 }
-                if (Gm1 != null)
+                if (Gm1 != null && (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 0))
                 {
                     var newRotation = Quaternion.LookRotation(Gm1.transform.position - transform.position).eulerAngles;
                     newRotation.x = 0;
