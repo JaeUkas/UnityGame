@@ -1014,6 +1014,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0573cc7cc8469d40be5d52be85e4662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet: {fileID: 3476312622085677364, guid: 49dc82e6eff6f064bac0936aeef13909, type: 3}
+  HeartBullet: {fileID: 4102921815354598616, guid: 44e0378e55952764abdf4c0ebc3fefd5,
+    type: 3}
   animator: {fileID: 0}
   rigidbody: {fileID: 0}
   HP: 0

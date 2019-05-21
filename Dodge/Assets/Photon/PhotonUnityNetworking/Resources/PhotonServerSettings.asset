@@ -33,5 +33,7 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - OnCollisionEnter
+  - InstantiateBullet
+  - InstantiateHeartBullet
   DisableAutoOpenWizard: 1
   ShowSettings: 1

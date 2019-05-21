@@ -50,6 +50,7 @@ public class Fire : MonoBehaviourPunCallbacks
                         transform.rotation = Quaternion.Euler(newRotation);
                         //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
                         Instantiate(Bullet, transform.position, transform.rotation);
+                        
                     }
                 }
                 if (gameObject == Em1)
@@ -61,7 +62,8 @@ public class Fire : MonoBehaviourPunCallbacks
                         newRotation.z = 0;
                         transform.rotation = Quaternion.Euler(newRotation);
                         //복제한다. //'Bullet'을 'FirePos.transform.position' 위치에 'FirePos.transform.rotation' 회전값으로.
-                        Instantiate(Bullet, transform.position, transform.rotation);
+                       Instantiate(Bullet, transform.position, transform.rotation);
+                       
                     }
                 }
             }
@@ -70,5 +72,22 @@ public class Fire : MonoBehaviourPunCallbacks
        
     }
 
- 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 10)
+        {
+            //HP--;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.layer == 11)
+        {
+            //HP--;
+            Destroy(other.gameObject);
+
+        }
+    }
+
+
 }

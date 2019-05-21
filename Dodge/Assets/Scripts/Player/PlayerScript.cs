@@ -6,6 +6,9 @@ using Photon.Realtime;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
+    public GameObject Bullet;
+    public GameObject HeartBullet;
+
     public Animator animator;
     public Rigidbody rigidbody;
 
@@ -52,6 +55,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
             rigidbody.velocity = new Vector3(moveX, 0, moveZ);
             if (HP == 0) Destroy(gameObject);
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Instantiate(Bullet, transform.position, transform.rotation);
+                photonView.RPC("InstantiateBullet", RpcTarget.All);
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                Instantiate(HeartBullet, transform.position, transform.rotation);
+                photonView.RPC("InstantiateHeartBullet", RpcTarget.All);
+            }
         }
         else
         {
@@ -85,4 +99,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             currRot = (Quaternion)stream.ReceiveNext();
         }
     }
+    [PunRPC]
+    public void InstantiateBullet()
+    {
+        Instantiate(Bullet, transform.position, transform.rotation);
+    }
+
+    [PunRPC]
+    public void InstantiateHeartBullet()
+    {
+        Instantiate(HeartBullet, transform.position, transform.rotation);
+    }
+
+
 }

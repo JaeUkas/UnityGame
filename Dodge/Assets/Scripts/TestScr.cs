@@ -5,6 +5,8 @@ using UnityEngine;
 public class TestScr : MonoBehaviour
 {
     public GameObject Gm;
+
+
     // Start is called before the first frame update
     void Start()
     {
