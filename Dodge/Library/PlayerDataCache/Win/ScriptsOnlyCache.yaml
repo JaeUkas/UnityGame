@@ -2,9 +2,10 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Bullet
-    - Fire
+    - Enemy
     - GameManager
     - Launcher
+    - MidWall
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
     - Photon.Pun.Demo.Asteroids.Spaceship
@@ -15,7 +16,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     - PlayerScript
-    - WallScript
+    - SideWall
     PhotonUnityNetworking.Editor.dll:
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
@@ -165,7 +166,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 18018}
+      Script: {instanceID: 18030}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,6 +233,16 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 9454}
+    - Class: 114
+      Script: {instanceID: 9460}
+    - Class: 114
+      Script: {instanceID: 9466}
+    - Class: 114
+      Script: {instanceID: 9474}
+    - Class: 114
+      Script: {instanceID: 9510}
+    - Class: 114
       Script: {instanceID: 9688}
     - Class: 114
       Script: {instanceID: 9812}
@@ -245,6 +256,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10586}
     - Class: 114
       Script: {instanceID: 11220}
+    - Class: 114
+      Script: {instanceID: 68158}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -258,6 +271,14 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -873,7 +894,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: WallScript
+    className: SideWall
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1116,12 +1137,6 @@ ScriptsOnlyBuild:
     className: NetworkLobbyManager
   - hash:
       serializedVersion: 2
-      Hash: 19d8e1078bac992986ad1c73f4385f6a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TestScr
-  - hash:
-      serializedVersion: 2
       Hash: 5887ef1bc706b22b773d253fd443ceef
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -1266,7 +1281,7 @@ ScriptsOnlyBuild:
     className: PhotonTransformView
   - hash:
       serializedVersion: 2
-      Hash: 753d8513a04872cd81915529cc25532c
+      Hash: b71334946bfb408553324940c9cbe302
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerScript
@@ -1482,10 +1497,10 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: e5c50a186bb964e5fceca976c0d15da4
+      Hash: 53647ee3d2b116f3065856ba24c42abc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Fire
+    className: Enemy
   - hash:
       serializedVersion: 2
       Hash: 4bb1c5f57e00f72426d832ce2fece49c
@@ -1578,12 +1593,6 @@ ScriptsOnlyBuild:
     className: ServerProperty
   - hash:
       serializedVersion: 2
-      Hash: 277d707297c378e958b4c48aecce3b48
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerScript2
-  - hash:
-      serializedVersion: 2
       Hash: d2a2698b314a20912af1eb2b1758dc90
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1648,12 +1657,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PooledObject
   - hash:
       serializedVersion: 2
       Hash: 7221ab9307aaa6b66a416e2e4561f420
@@ -1972,6 +1975,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MidWall
   platform: 5
   scenePathNames:
   - Assets/Scenes/Launcher.unity

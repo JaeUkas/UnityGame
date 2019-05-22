@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -15,6 +16,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private Transform tr;
     private PhotonView pv;
 
+    public GameObject healthBarBackground;
+    public Image healthBarFilled;
+
+    public GameObject firePos;
+
     private float h;
     private float v;
 
@@ -26,7 +32,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private Vector3 currPos;
     private Quaternion currRot;
 
-    public int HP;
+    public float Hp;
+    public float curruntHp;
 
     void Start()
     {
@@ -35,7 +42,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         pv.ObservedComponents[0] = this;
 
-        HP = 3;
+        Hp = 3;
+        curruntHp = Hp;
+        healthBarFilled.fillAmount = 1f;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
     }
@@ -54,18 +63,19 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             moveZ = v * speedZ * Time.deltaTime;
 
             rigidbody.velocity = new Vector3(moveX, 0, moveZ);
-            if (HP == 0) Destroy(gameObject);
+            //if (Hp == 0) Destroy(gameObject);
 
             if (Input.GetKeyDown(KeyCode.K))
             {
-                Instantiate(Bullet, transform.position, transform.rotation);
+                Instantiate(Bullet, firePos.transform.position, firePos.transform.rotation);
                 photonView.RPC("InstantiateBullet", RpcTarget.All);
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-                Instantiate(HeartBullet, transform.position, transform.rotation);
+                Instantiate(HeartBullet, firePos.transform.position, firePos.transform.rotation);
                 photonView.RPC("InstantiateHeartBullet", RpcTarget.All);
             }
+            
         }
         else
         {
@@ -74,15 +84,25 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             tr.rotation = Quaternion.Slerp(tr.rotation, currRot, Time.deltaTime * 10.0f);
         }
 
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 9)
         {
-            //HP--;
+            if(curruntHp>0) curruntHp--;
+            healthBarFilled.fillAmount = curruntHp / Hp;
+            healthBarBackground.SetActive(true);
             Destroy(other.gameObject);
-            
+        }
+        if (other.gameObject.layer == 11)
+        {
+            if (curruntHp < 3) curruntHp++;
+            healthBarFilled.fillAmount = curruntHp / Hp;
+            healthBarBackground.SetActive(true);
+            Destroy(other.gameObject);
         }
     }
 
@@ -102,13 +122,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void InstantiateBullet()
     {
-        Instantiate(Bullet, transform.position, transform.rotation);
+        Instantiate(Bullet, firePos.transform.position, firePos.transform.rotation);
     }
 
     [PunRPC]
     public void InstantiateHeartBullet()
     {
-        Instantiate(HeartBullet, transform.position, transform.rotation);
+        Instantiate(HeartBullet, firePos.transform.position, firePos.transform.rotation);
     }
 
 

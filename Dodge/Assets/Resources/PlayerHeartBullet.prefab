@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 588523807021899791}
   - component: {fileID: 4831354114231479527}
   m_Layer: 11
-  m_Name: Magic fire 3
+  m_Name: PlayerHeartBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9537,8 +9537,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.165
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &4831354114231479527
 MonoBehaviour:
   m_ObjectHideFlags: 0
