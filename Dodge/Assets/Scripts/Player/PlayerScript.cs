@@ -48,7 +48,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
     }
-    void FixedUpdate()
+    void Update()
     {
         if(pv.IsMine)
         {
@@ -67,12 +67,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
             if (Input.GetKeyDown(KeyCode.K))
             {
-                Instantiate(Bullet, firePos.transform.position, firePos.transform.rotation);
-                photonView.RPC("InstantiateBullet", RpcTarget.All);
+               photonView.RPC("InstantiateBullet", RpcTarget.All);
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-                Instantiate(HeartBullet, firePos.transform.position, firePos.transform.rotation);
                 photonView.RPC("InstantiateHeartBullet", RpcTarget.All);
             }
             

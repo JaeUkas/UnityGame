@@ -186,6 +186,7 @@
     <Compile Include="Assets\Scripts\Network\PhotonInit.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Player\Player2Script.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\Wall\MidWall.cs" />
     <Compile Include="Assets\Scripts\Wall\SideWall.cs" />

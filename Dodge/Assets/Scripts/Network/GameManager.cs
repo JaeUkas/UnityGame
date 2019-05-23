@@ -8,7 +8,9 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject camaraPrefab;
+    public GameObject camaraPrefab1;
     public GameObject playerPrefab;
+    public GameObject playerPrefab2;
     public GameObject enemyPrefab;
     public static GameManager Instance;
 
@@ -33,15 +35,14 @@ public class GameManager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 1)
             {
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-               // PhotonNetwork.Instantiate(this.camaraPrefab.name, new Vector3(0f, 265f, 340f), Quaternion.Euler(61, 180, 0), 0);
+                Instantiate(camaraPrefab, camaraPrefab.transform.position, camaraPrefab.transform.rotation);
                 pClone = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, -270f), Quaternion.identity, 0);
                 eClone = PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, -100f), Quaternion.Euler(0, 180, 0), 0);
             }
             else if (PhotonNetwork.CurrentRoom.PlayerCount % 2 == 0)
             {
-                
-                //PhotonNetwork.Instantiate(this.camaraPrefab.name, new Vector3(0f, 265f, -350f), Quaternion.Euler(61, 0, 0), 0);
-                pClone1 = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 250f), Quaternion.Euler(0,180,0), 0);
+                Instantiate(camaraPrefab1, camaraPrefab1.transform.position, camaraPrefab1.transform.rotation);
+                pClone1 = PhotonNetwork.Instantiate(this.playerPrefab2.name, new Vector3(0f, 0f, 250f), Quaternion.Euler(0,180,0), 0);
                 eClone1 = PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, 90f), Quaternion.identity, 0);
             }
         }
