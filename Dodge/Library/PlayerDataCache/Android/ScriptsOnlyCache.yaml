@@ -33,10 +33,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -161,19 +159,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10720}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10744}
+      Script: {instanceID: 10742}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10758}
+      Script: {instanceID: 10756}
+    - Class: 114
+      Script: {instanceID: 11212}
     - Class: 114
       Script: {instanceID: 11240}
     - Class: 114
       Script: {instanceID: 11334}
-    - Class: 114
-      Script: {instanceID: 21372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -266,9 +264,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10672}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10950}
+      Script: {instanceID: 10948}
     - Class: 114
       Script: {instanceID: 11240}
     - Class: 114
@@ -1914,6 +1912,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerNameInputField
+  - hash:
+      serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -2050,12 +2054,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerNameInputField
   platform: 13
   scenePathNames:
   - Assets/Scenes/Launcher.unity

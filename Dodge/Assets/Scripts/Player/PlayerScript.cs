@@ -64,7 +64,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         Hp = 5;
         curruntHp = Hp;
-        healthBarFilled.fillAmount = 1f;
+        healthBarFilled.fillAmount = curruntHp / Hp;
+        healthBarBackground.SetActive(true);
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
 
@@ -135,14 +136,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             if(curruntHp>0) curruntHp--;
             healthBarFilled.fillAmount = curruntHp / Hp;
-            healthBarBackground.SetActive(true);
             Destroy(other.gameObject);
         }
         if (other.gameObject.layer == 11)
         {
-            if (curruntHp < 3) curruntHp++;
+            if (curruntHp < 5) curruntHp++;
             healthBarFilled.fillAmount = curruntHp / Hp;
-            healthBarBackground.SetActive(true);
             Destroy(other.gameObject);
         }
     }
@@ -171,12 +170,5 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         Instantiate(HeartBullet, firePos.transform.position, firePos.transform.rotation);
     }
-
-    [PunRPC]
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
-
 
 }
