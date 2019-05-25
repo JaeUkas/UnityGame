@@ -3,7 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Bullet
     - Enemy
+    - FireSkill
+    - FixedJoystick
     - GameManager
+    - HealSkill
     - Launcher
     - MidWall
     - Photon.Pun.Demo.Asteroids.Asteroid
@@ -16,6 +19,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     - Player2Script
+    - PlayerNameInputField
     - PlayerScript
     - SideWall
     PhotonUnityNetworking.Editor.dll:
@@ -29,11 +33,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationBlendTree.Node
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -92,85 +93,85 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9268}
+      Script: {instanceID: 9270}
     - Class: 114
-      Script: {instanceID: 9344}
-    - Class: 114
-      Script: {instanceID: 9346}
+      Script: {instanceID: 9318}
     - Class: 114
       Script: {instanceID: 9348}
     - Class: 114
-      Script: {instanceID: 9364}
+      Script: {instanceID: 9350}
     - Class: 114
-      Script: {instanceID: 9400}
+      Script: {instanceID: 9352}
     - Class: 114
-      Script: {instanceID: 9420}
+      Script: {instanceID: 9368}
     - Class: 114
-      Script: {instanceID: 9452}
+      Script: {instanceID: 9404}
     - Class: 114
-      Script: {instanceID: 9454}
+      Script: {instanceID: 9424}
     - Class: 114
-      Script: {instanceID: 9460}
+      Script: {instanceID: 9456}
     - Class: 114
-      Script: {instanceID: 9466}
+      Script: {instanceID: 9458}
     - Class: 114
-      Script: {instanceID: 9474}
+      Script: {instanceID: 9464}
     - Class: 114
-      Script: {instanceID: 9476}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9510}
+      Script: {instanceID: 9478}
     - Class: 114
-      Script: {instanceID: 9512}
+      Script: {instanceID: 9480}
     - Class: 114
-      Script: {instanceID: 9612}
+      Script: {instanceID: 9514}
     - Class: 114
-      Script: {instanceID: 9644}
+      Script: {instanceID: 9516}
     - Class: 114
-      Script: {instanceID: 9646}
+      Script: {instanceID: 9618}
     - Class: 114
       Script: {instanceID: 9650}
     - Class: 114
-      Script: {instanceID: 9712}
+      Script: {instanceID: 9652}
     - Class: 114
-      Script: {instanceID: 9778}
+      Script: {instanceID: 9656}
     - Class: 114
-      Script: {instanceID: 9812}
+      Script: {instanceID: 9718}
     - Class: 114
-      Script: {instanceID: 10040}
+      Script: {instanceID: 9786}
     - Class: 114
-      Script: {instanceID: 10222}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 10298}
+      Script: {instanceID: 10050}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10234}
     - Class: 114
-      Script: {instanceID: 10332}
+      Script: {instanceID: 10310}
     - Class: 114
-      Script: {instanceID: 10408}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10458}
+      Script: {instanceID: 10344}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10524}
+      Script: {instanceID: 10472}
     - Class: 114
-      Script: {instanceID: 10584}
+      Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10700}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10724}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10732}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10738}
+      Script: {instanceID: 10744}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 11306}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 18054}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 35626}
+      Script: {instanceID: 11334}
+    - Class: 114
+      Script: {instanceID: 21372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,33 +238,39 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9454}
+      Script: {instanceID: 9318}
     - Class: 114
-      Script: {instanceID: 9460}
+      Script: {instanceID: 9458}
     - Class: 114
-      Script: {instanceID: 9466}
+      Script: {instanceID: 9464}
     - Class: 114
-      Script: {instanceID: 9474}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9510}
+      Script: {instanceID: 9478}
     - Class: 114
-      Script: {instanceID: 9688}
+      Script: {instanceID: 9514}
     - Class: 114
-      Script: {instanceID: 9812}
+      Script: {instanceID: 9530}
     - Class: 114
-      Script: {instanceID: 10298}
+      Script: {instanceID: 9694}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 10384}
+      Script: {instanceID: 10310}
     - Class: 114
-      Script: {instanceID: 10584}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 10398}
     - Class: 114
-      Script: {instanceID: 11256}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 35626}
+      Script: {instanceID: 10672}
+    - Class: 114
+      Script: {instanceID: 10950}
+    - Class: 114
+      Script: {instanceID: 11240}
+    - Class: 114
+      Script: {instanceID: 11282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -289,6 +296,12 @@ ScriptsOnlyBuild:
     - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
   - hash:
       serializedVersion: 2
       Hash: 80d2851602cb4bcb6f559596c5eb955b
@@ -373,6 +386,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatGui
+  - hash:
+      serializedVersion: 2
+      Hash: b71334946bfb408553324940c9cbe302
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player2Script
   - hash:
       serializedVersion: 2
       Hash: 74c875e0f15c48e0a55f06093aa93e15
@@ -669,6 +688,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 562ca269d5a103bbf4e1f2e46a1dcb7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FireSkill
+  - hash:
+      serializedVersion: 2
       Hash: 9e70ecf91466f07d9bd649be625cae52
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -963,6 +988,12 @@ ScriptsOnlyBuild:
     className: PhotonHandler
   - hash:
       serializedVersion: 2
+      Hash: 9e27f44bbf48228f203a37254d40f8ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickSetterExample
+  - hash:
+      serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1153,6 +1184,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: InfosPanelPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatingJoystick
   - hash:
       serializedVersion: 2
       Hash: fb0443374d52c588a4d2f5e759fd8498
@@ -1359,7 +1396,7 @@ ScriptsOnlyBuild:
     className: DetectPanel
   - hash:
       serializedVersion: 2
-      Hash: 4f0d6778e500dd2fab5136957e628e0c
+      Hash: f0873b7caf33a97b4dcc8717ea369c7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1503,10 +1540,16 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 53647ee3d2b116f3065856ba24c42abc
+      Hash: ae0d781c7173e81c62b79dcfe15004a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
+  - hash:
+      serializedVersion: 2
+      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DynamicJoystick
   - hash:
       serializedVersion: 2
       Hash: 4bb1c5f57e00f72426d832ce2fece49c
@@ -1573,6 +1616,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FriendItem
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FixedJoystick
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1707,10 +1756,22 @@ ScriptsOnlyBuild:
     className: EventSystemSpawner
   - hash:
       serializedVersion: 2
+      Hash: 528e9858840cb8370d93939fff6b42d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickPlayerExample
+  - hash:
+      serializedVersion: 2
       Hash: 48804c7edfd2998cdab1bf456d8dbfd0
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: PlayerListView
+  - hash:
+      serializedVersion: 2
+      Hash: 562ca269d5a103bbf4e1f2e46a1dcb7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealSkill
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1929,6 +1990,12 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsOfflineProperty
   - hash:
       serializedVersion: 2
+      Hash: 9dac16f3efc511835ac976dfae55f580
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VariableJoystick
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1989,10 +2056,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: b71334946bfb408553324940c9cbe302
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Player2Script
+    className: PlayerNameInputField
   platform: 5
   scenePathNames:
   - Assets/Scenes/Launcher.unity

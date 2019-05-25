@@ -1531,9 +1531,9 @@ GameObject:
   - component: {fileID: 1959495958629190820}
   - component: {fileID: 1604671570548721929}
   - component: {fileID: 587330249388408140}
-  - component: {fileID: 3554566827624787280}
-  - component: {fileID: 6774034321802144642}
   - component: {fileID: 6073210823235668517}
+  - component: {fileID: 7436683644477361576}
+  - component: {fileID: -51105365467338230}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1608,7 +1608,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: -0.05}
---- !u!114 &3554566827624787280
+--- !u!114 &6073210823235668517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1617,13 +1617,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8860027354544442097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: 356739f0d0cfdf746822a1ba4bf3132b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
---- !u!114 &6774034321802144642
+  Bullet: {fileID: 3476312622085677364, guid: 49dc82e6eff6f064bac0936aeef13909, type: 3}
+  HeartBullet: {fileID: 5305566667003970684, guid: 44e0378e55952764abdf4c0ebc3fefd5,
+    type: 3}
+  animator: {fileID: 0}
+  rigidbody: {fileID: 0}
+  healthBarBackground: {fileID: 6867829433822614186}
+  healthBarFilled: {fileID: 549683590542607257}
+  firePos: {fileID: 6776973730419825382}
+  Hp: 0
+  curruntHp: 0
+--- !u!114 &7436683644477361576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1638,14 +1645,14 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 3554566827624787280}
+  - {fileID: -51105365467338230}
   viewIdField: 0
-  InstantiationId: 1
+  InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6073210823235668517
+--- !u!114 &-51105365467338230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1654,16 +1661,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8860027354544442097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356739f0d0cfdf746822a1ba4bf3132b, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 3476312622085677364, guid: 49dc82e6eff6f064bac0936aeef13909, type: 3}
-  HeartBullet: {fileID: 4102921815354598616, guid: 44e0378e55952764abdf4c0ebc3fefd5,
-    type: 3}
-  animator: {fileID: 0}
-  rigidbody: {fileID: 0}
-  healthBarBackground: {fileID: 6867829433822614186}
-  healthBarFilled: {fileID: 549683590542607257}
-  firePos: {fileID: 6776973730419825382}
-  Hp: 0
-  curruntHp: 0
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0

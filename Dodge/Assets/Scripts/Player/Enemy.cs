@@ -7,9 +7,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviourPunCallbacks
 {
-    public float Hp;
-    public float curruntHp;
-
+   
     public GameObject Gm;
     public GameObject Gm1;
 
@@ -23,16 +21,21 @@ public class Enemy : MonoBehaviourPunCallbacks
 
     GameManager GM;
 
+    public float Hp;
+    public float curruntHp;
+
     float timer;
     float waitingTime;
 
     void Awake()
     {
         GM = GameObject.Find("PhotonMgr").GetComponent<GameManager>();
-
-        Hp = 1000;
+        
+        Hp = 40;
         curruntHp = Hp;
-        healthBarFilled.fillAmount = 1f;
+        healthBarFilled.fillAmount = curruntHp / Hp;
+        healthBarBackground.SetActive(true);
+
         timer = 0f;
         waitingTime = 0.4f;
     }
@@ -50,7 +53,6 @@ public class Enemy : MonoBehaviourPunCallbacks
 
         if (timer > waitingTime)
         {
-            //if (Input.GetMouseButtonDown(0))
             {
                 if (gameObject == Em)
                 {
@@ -81,27 +83,30 @@ public class Enemy : MonoBehaviourPunCallbacks
             }
             timer = 0;
         }
-
-        healthBarFilled.fillAmount = curruntHp / Hp;
-        healthBarBackground.SetActive(true);
+        
+        if (curruntHp <= 0)
+        {
+            PhotonNetwork.Destroy(gameObject);
+            GM.enemyDie++;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 10)
         {
-            curruntHp -= 30;
+            curruntHp -= 1;
+            healthBarFilled.fillAmount = curruntHp / Hp;
             Destroy(other.gameObject);
 
         }
 
         if (other.gameObject.layer == 11)
         {
-            //Hp--;
             Destroy(other.gameObject);
-
         }
     }
+
 
 
 }

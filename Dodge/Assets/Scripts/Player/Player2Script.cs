@@ -4,9 +4,14 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Player2Script : MonoBehaviourPunCallbacks, IPunObservable
 {
+    protected Joystick joystick;
+    protected FireSkill fireSkill;
+    protected HealSkill healSkill;
+
     public GameObject Bullet;
     public GameObject HeartBullet;
 
@@ -21,13 +26,15 @@ public class Player2Script : MonoBehaviourPunCallbacks, IPunObservable
 
     public GameObject firePos;
 
+    GameManager GM;
+
     private float h;
     private float v;
 
     private float moveX;
     private float moveZ;
-    private float speedH = 4000f;
-    private float speedZ = 4000f;
+    private float speedH = 3500f;
+    private float speedZ = 3500f;
 
     private Vector3 currPos;
     private Quaternion currRot;
@@ -35,43 +42,78 @@ public class Player2Script : MonoBehaviourPunCallbacks, IPunObservable
     public float Hp;
     public float curruntHp;
 
+    float skill1Timer;
+    float skill1WaitingTime;
+
+    float skill2Timer;
+    float skill2WaitingTime;
+
+
     void Start()
     {
+        joystick = FindObjectOfType<Joystick>();
+        fireSkill = FindObjectOfType<FireSkill>();
+        healSkill = FindObjectOfType<HealSkill>();
+
         tr = GetComponent<Transform>();
         pv = GetComponent<PhotonView>();
 
+        GM = GameObject.Find("PhotonMgr").GetComponent<GameManager>();
+
         pv.ObservedComponents[0] = this;
 
-        Hp = 3;
+        Hp = 5;
         curruntHp = Hp;
         healthBarFilled.fillAmount = 1f;
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
+
+        skill1Timer = 0f;
+        skill1WaitingTime = 0.8f;
+
+        skill2Timer = 0f;
+        skill2WaitingTime = 0.8f;
     }
     void Update()
     {
         if (pv.IsMine)
         {
-            // 자신의 플레이어만 키보드 조작을 허용한다.
-            h = Input.GetAxis("Horizontal");
-            v = Input.GetAxis("Vertical");
 
+            skill1Timer += Time.deltaTime;
+            skill2Timer += Time.deltaTime;
+
+            h = (-1 * joystick.Horizontal) + (-1 * Input.GetAxis("Horizontal"));
+            v = (-1 * joystick.Vertical) + (-1 * Input.GetAxis("Vertical"));
             animator.SetFloat("h", h);
             animator.SetFloat("v", v);
 
-            moveX = -1 * h * speedH * Time.deltaTime;
-            moveZ = -1 * v * speedZ * Time.deltaTime;
+            moveX = h * speedH * Time.deltaTime;
+            moveZ = v * speedZ * Time.deltaTime;
 
             rigidbody.velocity = new Vector3(moveX, 0, moveZ);
-            //if (Hp == 0) Destroy(gameObject);
-
-            if (Input.GetKeyDown(KeyCode.K))
+            if (curruntHp <= 0)
             {
-                photonView.RPC("InstantiateBullet", RpcTarget.All);
+                PhotonNetwork.Destroy(gameObject);
+                GM.playerDie++;
             }
-            if (Input.GetKeyDown(KeyCode.J))
+            if (skill1Timer > skill1WaitingTime)
             {
-                photonView.RPC("InstantiateHeartBullet", RpcTarget.All);
+                if (Input.GetKeyDown(KeyCode.K) || fireSkill.Pressed)
+                {
+                    photonView.RPC("InstantiateBullet", RpcTarget.All);
+                    skill1Timer = 0;
+                }
+
+            }
+
+            if (skill2Timer > skill2WaitingTime)
+            {
+                if (Input.GetKeyDown(KeyCode.J) || healSkill.Pressed)
+                {
+                    photonView.RPC("InstantiateHeartBullet", RpcTarget.All);
+                    skill2Timer = 0;
+                }
+
             }
 
         }
@@ -127,6 +169,12 @@ public class Player2Script : MonoBehaviourPunCallbacks, IPunObservable
     public void InstantiateHeartBullet()
     {
         Instantiate(HeartBullet, firePos.transform.position, firePos.transform.rotation);
+    }
+
+    [PunRPC]
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 

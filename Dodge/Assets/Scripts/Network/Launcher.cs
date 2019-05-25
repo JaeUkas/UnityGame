@@ -10,7 +10,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public string userId = "test01";
 
     [SerializeField]
-    private byte maxPlayersPerRoom = 4;
+    private byte maxPlayersPerRoom = 2;
     [SerializeField]
     private GameObject controlPanel;
     [SerializeField]

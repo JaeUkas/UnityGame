@@ -20,8 +20,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject eClone;
     public GameObject eClone1;
 
+    public int enemyDie;
+    public int playerDie;
+
+    private bool start;
+
     private void Start()
     {
+        enemyDie = 0;
+        playerDie = 0;
         Instance = this;
 
         if (playerPrefab == null)
@@ -45,6 +52,26 @@ public class GameManager : MonoBehaviourPunCallbacks
                 pClone1 = PhotonNetwork.Instantiate(this.playerPrefab2.name, new Vector3(0f, 0f, 250f), Quaternion.Euler(0,180,0), 0);
                 eClone1 = PhotonNetwork.Instantiate(this.enemyPrefab.name, new Vector3(0f, 1f, 90f), Quaternion.identity, 0);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2) start = true;
+        if (enemyDie >= 1)
+        {
+            OnLeftRoom();
+            LeaveRoom();
+        }
+        if (playerDie >= 1)
+        {
+            OnLeftRoom();
+            LeaveRoom();
+        }
+        if (start == true && PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            OnLeftRoom();
+            LeaveRoom();
         }
     }
 
